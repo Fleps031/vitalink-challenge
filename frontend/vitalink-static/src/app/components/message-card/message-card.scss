@@ -1,0 +1,36 @@
+.card{
+    background-color: #E1E8ED;
+    padding: 0 8px 8px 8px;
+    height: 100px;
+    box-shadow: 0 12px 10px -6px gray;
+    align-content: center;
+}
+
+.date-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+    color: #7C7C7C;
+}
+
+.patient-info{
+    display: flex;
+    flex-direction: row;
+    grid-gap: 12px;
+}
+
+img{
+    width: 42px;
+    height: 42px;
+    border-radius: 100px;
+}
+
+.last-message{
+    color: #7C7C7C;
+}
+
+.patient-name{
+    font-size: 20px;
+    font-weight: 400;
+}

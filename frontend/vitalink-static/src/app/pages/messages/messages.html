@@ -1,0 +1,31 @@
+<section class="messages-container">
+    <div class="messages-section">
+        <h1>Em atendimento</h1>
+        <div class="hor-divider"></div>
+
+        <div class="messages-split-section">
+            <app-message-list [messageCards]="messageList.IN_CALL" (selectCard)="changeSelectedCard($event)"></app-message-list>
+            <app-message-board></app-message-board>
+        </div>
+    </div>
+
+    <div class="messages-split-section">
+        <div class="messages-section">
+            <h1>Finalizados</h1>
+            <div class="hor-divider"></div>
+
+            <div>
+                <app-message-list [messageCards]="messageList.FINISHED"></app-message-list>
+            </div>
+        </div>
+
+        <div class="messages-section">
+            <h1>Em aberto</h1>
+            <div class="hor-divider"></div>
+
+            <div>
+                <app-message-list [messageCards]="messageList.WAITING_CALL"></app-message-list>
+            </div>
+        </div>
+    </div>
+</section>
