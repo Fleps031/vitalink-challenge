@@ -5,10 +5,12 @@ import { mockFinishedCard, mockInCallCard, mockWaitingCard } from './mocks';
 import { messageCardStatusEnum } from '../../models/enums/messageCardStatus.enum';
 import { MessageBoard } from "./message-board/message-board";
 import { MessageService } from '../../services/message-service/message-service';
+import { Observable } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-messages',
-  imports: [MessageList, MessageBoard],
+  imports: [MessageList, MessageBoard, AsyncPipe],
   templateUrl: './messages.html',
   styleUrl: './messages.scss',
 })
@@ -39,14 +41,18 @@ export class Messages {
   }
 
   selectedCard: IMessageCard;
+  serverMessages$: Observable<any>
 
-  constructor(private messageService: MessageService){}
+  constructor(private messageService: MessageService){
+    
+  }
 
 
 
   ngOnInit(){
     this.selectedCard = this.messageList.IN_CALL[0]
     this.messageService.getServerMessages();
+    this.serverMessages$ = this.messageService.messages$
   }
 
   changeSelectedCard(card: IMessageCard){

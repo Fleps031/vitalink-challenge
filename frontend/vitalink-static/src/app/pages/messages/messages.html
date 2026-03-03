@@ -5,9 +5,10 @@
 
         <div class="messages-split-section">
             <app-message-list [messageCards]="messageList.IN_CALL" (selectCard)="changeSelectedCard($event)"></app-message-list>
-            <app-message-board></app-message-board>
+            <app-message-board [allMessages]="serverMessages$ | async" [selectedConversation]="selectedCard.patient.phone"></app-message-board>
         </div>
     </div>
+    
 
     <div class="messages-split-section">
         <div class="messages-section">
@@ -28,4 +29,5 @@
             </div>
         </div>
     </div>
+    
 </section>

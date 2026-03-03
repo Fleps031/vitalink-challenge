@@ -8,7 +8,7 @@ export const mockPatient: IPatient = {
     email: 'email@email.com',
     birthday: '12-02-2005',
     document: '99.999.999-99',
-    phone: '11993863819'
+    phone: '5511993863819'
 }
   
 export const mockInCallCard: IMessageCard = {
