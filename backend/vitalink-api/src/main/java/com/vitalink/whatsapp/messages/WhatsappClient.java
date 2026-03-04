@@ -24,6 +24,7 @@ public class WhatsappClient {
 
     public Mono<MetaSendMessageResponse> sendTextMessage(MetaSendMessageRequest request) {
 
+        System.out.println("Enviando mensagem: " + request);
         return whatsappWebClient.post()
                 .uri(uriBuilder -> uriBuilder
                         .path("/{phoneNumberId}/messages")
