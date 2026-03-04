@@ -11,13 +11,14 @@ import SockJS from 'sockjs-client';
 export class MessageService {
 
 
-  private messageSubject: BehaviorSubject<Record<string,IMessage[]>> = 
+  private messageSubject: BehaviorSubject<Record<string,IMessage[]>> =
     new BehaviorSubject<Record<string,IMessage[]>>(this.getLocalMessages());
 
-  
+
   public messages$: Observable<Record<string,IMessage[]>> = this.messageSubject.asObservable();
 
-  private apiUrl = ' https://bernie-nonhypostatic-unlucidly.ngrok-free.dev/';
+  // private apiUrl = 'https://bernie-nonhypostatic-unlucidly.ngrok-free.dev/';
+  private apiUrl = 'http://localhost:8080/';
 
 
   constructor(private http: HttpClient) {}
@@ -71,8 +72,10 @@ export class MessageService {
     return obj && Object.keys(obj).length === 0 && obj.constructor === Object;
   }
 
-  sendMessage(message: string, to: string): Observable<any>{
+  sendMessage(message: string, to: string): void{
     const url = this.apiUrl + 'api/whatsapp/send'
+
+    console.log("send")
 
     const body = {
       to: to,
@@ -87,6 +90,6 @@ export class MessageService {
     }
 
     this.saveLocalMessage(newMessage, to)
-    return this.http.post(url, body)
+    this.http.post(url, body).subscribe((res) => console.log(res))
   }
 }

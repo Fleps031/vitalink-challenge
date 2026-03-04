@@ -3,3 +3,5 @@
         <app-message-bubble [message]="message"></app-message-bubble>
     }
 </div>
+
+<input #rawInput type="text" class="message-input" (keyup)="submitMessage(rawInput.value, $event)">

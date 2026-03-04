@@ -1,6 +1,6 @@
 <section class="card-list">
     @for (card of messageCards; track $index) {
-        <app-message-card [cardInfo]="card" (click)="selectCard"></app-message-card>
+        <app-message-card [cardInfo]="card" (clickCard)="onSelectCard($event)"></app-message-card>
     }
 </section>
 

@@ -9,5 +9,5 @@ export interface IMessageCard{
     lastMessageDate: string,
     type: messageCardTypeEnum,
     status: messageCardStatusEnum,
-    selected?: boolean
+    selected?: boolean,
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IMessageCard } from '../../models/interfaces/messageCard.interface';
 
 @Component({
@@ -9,5 +9,13 @@ import { IMessageCard } from '../../models/interfaces/messageCard.interface';
 })
 export class MessageCard {
   @Input() cardInfo: IMessageCard;
+  @Output() clickCard: EventEmitter<IMessageCard>;
 
+  constructor(){
+    this.clickCard = new EventEmitter<IMessageCard>();
+  }
+
+  onClickCard(): void{
+    this.clickCard.emit(this.cardInfo)
+  }
 }

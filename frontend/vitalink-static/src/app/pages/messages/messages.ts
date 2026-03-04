@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MessageList } from "./message-list/message-list";
 import { IMessageCard } from '../../models/interfaces/messageCard.interface';
-import { mockFinishedCard, mockInCallCard, mockWaitingCard } from './mocks';
+import { mockFinishedCard, mockInCallCard, mockInCallFranciscoCard, mockInCallMatheusCard, mockWaitingCard } from './mocks';
 import { messageCardStatusEnum } from '../../models/enums/messageCardStatus.enum';
 import { MessageBoard } from "./message-board/message-board";
 import { MessageService } from '../../services/message-service/message-service';
@@ -19,8 +19,8 @@ export class Messages {
   @Input() messageList: Record<messageCardStatusEnum, IMessageCard[]> = {
     "IN_CALL": [
       mockInCallCard,
-      mockInCallCard,
-      mockInCallCard,
+      mockInCallMatheusCard,
+      mockInCallFranciscoCard,
       mockInCallCard,
     ],
     "FINISHED": [
@@ -44,7 +44,7 @@ export class Messages {
   serverMessages$: Observable<any>
 
   constructor(private messageService: MessageService){
-    
+
   }
 
 
@@ -56,8 +56,12 @@ export class Messages {
   }
 
   changeSelectedCard(card: IMessageCard){
+    console.log("change card")
     this.selectedCard = card
   }
 
+  sendMessage(message: string){
+    this.messageService.sendMessage(message, this.selectedCard.patient.phone);
+  }
 
 }
