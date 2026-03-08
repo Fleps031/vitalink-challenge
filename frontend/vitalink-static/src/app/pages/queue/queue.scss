@@ -1,0 +1,13 @@
+.columns-wrapper{
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    grid-gap: 20px;
+}
+
+.ver-divider{
+    width: 2px;
+    height: 600px;
+    background-color: rgb(192, 192, 192);
+    margin-top: 28px;
+}

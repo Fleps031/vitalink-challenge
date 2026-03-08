@@ -1,0 +1,12 @@
+
+
+<div class="queue-column">
+    <h1>{{label}}</h1>
+    <div class="hor-divider"></div>
+
+    <div class="cards">
+        @for (card of cards; track $index) {
+            <app-message-card [cardInfo]="card"></app-message-card>
+        }
+    </div>
+</div>

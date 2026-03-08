@@ -1,1 +1,18 @@
-<p>queue works!</p>
+<section class="columns-wrapper">
+    <app-queue-column [cards]="allCards.FIRST_CONTACT" label="Primeiro contato"></app-queue-column>
+    
+    <div class="ver-divider"></div>
+    
+    <app-queue-column [cards]="allCards.FIRST_CONTACT" label="Aguardando atendimento"></app-queue-column>
+    
+    <div class="ver-divider"></div>
+    
+    <app-queue-column [cards]="allCards.FIRST_CONTACT" label="Em atendimento"></app-queue-column>
+    
+    <div class="ver-divider"></div>
+
+    <app-queue-column [cards]="allCards.FIRST_CONTACT" label="Finalizado"></app-queue-column>
+    
+    <div class="ver-divider"></div>
+</section>
+
