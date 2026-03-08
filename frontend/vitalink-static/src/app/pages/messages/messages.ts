@@ -22,6 +22,7 @@ export class Messages {
       mockInCallMatheusCard,
       mockInCallFranciscoCard,
       mockInCallCard,
+      mockInCallCard,
     ],
     "FINISHED": [
       mockFinishedCard,

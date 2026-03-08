@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IMessageCard } from '../../models/interfaces/messageCard.interface';
+import { messageCardTypeLabelEnum } from '../../models/enums/messageCardType.enum';
 
 @Component({
   selector: 'app-message-card',
@@ -10,6 +11,7 @@ import { IMessageCard } from '../../models/interfaces/messageCard.interface';
 export class MessageCard {
   @Input() cardInfo: IMessageCard;
   @Output() clickCard: EventEmitter<IMessageCard>;
+  typeEnum = messageCardTypeLabelEnum;
 
   constructor(){
     this.clickCard = new EventEmitter<IMessageCard>();

@@ -1,7 +1,11 @@
-<div class="message-board">
-    @for (message of messages; track $index) {
-        <app-message-bubble [message]="message"></app-message-bubble>
-    }
+<div class="board-wrapper">
+    <div class="message-board">
+        @for (message of messages; track $index) {
+            <app-message-bubble [message]="message"></app-message-bubble>
+        }
+    </div>
+
+    <textarea #rawInput type="text" class="message-input" (keyup)="submitMessage(rawInput.value, $event)"></textarea>
+
 </div>
 
-<input #rawInput type="text" class="message-input" (keyup)="submitMessage(rawInput.value, $event)">

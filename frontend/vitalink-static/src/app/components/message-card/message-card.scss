@@ -34,3 +34,37 @@ img{
     font-size: 20px;
     font-weight: 400;
 }
+
+.card-type{
+    display: flex;
+    width: fit-content;
+    padding: 0 10px 0px 10px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 20px;
+    right: 16px;
+    color: white;
+    font-size: 12px;
+}
+
+.SCHEDULE{
+    background-color: #54ACAF;
+}
+
+.BROAD_QUESTION{
+    background-color: #E69F4E;
+}
+
+.RE_SCHEDULE{
+    background-color: #5474AF;
+}
+
+.INSURANCE{
+    background-color: #54AF62;
+}
+
+.NOT_DEFINED{
+    background-color: #7C7C7C;
+}

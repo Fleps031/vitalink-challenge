@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +9,17 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('vitalink');
+
+  constructor(private router: Router){
+    console.log(router.url)
+  }
+
+
+  isActiveRoute(routeTo: string){
+   return this.router.url == routeTo
+  }
+
+  navigateTo(routeTo: string){
+    this.router.navigate([routeTo])
+  }
 }

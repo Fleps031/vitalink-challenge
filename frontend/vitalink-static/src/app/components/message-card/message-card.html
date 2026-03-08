@@ -1,10 +1,14 @@
 <div class="card" (click)="onClickCard()">
+    <div [class]="'card-type ' + cardInfo.type">
+        <p>{{typeEnum[cardInfo.type]}}</p>
+    </div>
+
     <div class="date-info">
         <p>{{cardInfo.lastMessageDate}}</p>
     </div>
 
     <div class="patient-info">
-        <img src="https://ovicio.com.br/wp-content/uploads/2022/04/20220410-shadow-02-ovicio-555x555.jpg" alt="">
+        <img src="https://100k-faces.vercel.app/api/random-image" alt="">
         <div>
             <h2 class="patient-name">{{cardInfo.patient.name}}</h2>
             <p class="last-message">{{cardInfo.lastMessage}}</p>

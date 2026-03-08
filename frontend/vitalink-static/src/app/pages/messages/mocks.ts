@@ -4,7 +4,7 @@ import { IMessageCard } from "../../models/interfaces/messageCard.interface"
 import { IPatient } from "../../models/interfaces/patient.interface"
 
 export const mockPatient: IPatient = {
-    name: 'Felipe Molinari',
+    name: 'Paciente Exemplo',
     email: 'email@email.com',
     birthday: '12-02-2005',
     document: '99.999.999-99',

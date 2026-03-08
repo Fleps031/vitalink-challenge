@@ -2,16 +2,38 @@
     display: flex;
     flex-direction: column;
     grid-gap: 32px;
+    padding-left: 40px;
 }
 
 .messages-section{
     display: flex;
     flex-direction: column;
+    grid-gap: 8px;
+}
+
+.hor-divider{
+    height: 2px;
+    width: 278px;
+    background-color: black;
 }
 
 .messages-split-section{
     display: flex;
     flex-direction: row;
     grid-gap: 21px;
+}
+
+.message-board-split-section{
+    display: flex;
+    flex-direction: row;
+    grid-gap: 21px;
+    background-color: #ececec;
+    width: 1120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h1{
+    font-weight: 400;
 }
 

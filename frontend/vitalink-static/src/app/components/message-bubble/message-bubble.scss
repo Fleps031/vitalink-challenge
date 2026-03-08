@@ -6,10 +6,30 @@
 
 .patient-bubble{
     background-color: rgb(166, 189, 253);
+    width: 200px;
+    justify-self: flex-start;
 
 }
 
 .caller-bubble{
     background-color: rgb(134, 248, 134);
+    width: 200px;
+    justify-self: flex-end;
     
+}
+
+.caller-date{
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    padding: 4px;
+}
+
+
+.patient-date{
+    display: flex;
+    width: 240px;
+    justify-content: flex-end;
+    align-items: end;
+    padding: 4px;
 }

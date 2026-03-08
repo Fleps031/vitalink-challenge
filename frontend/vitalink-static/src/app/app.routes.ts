@@ -11,6 +11,6 @@ export const routes: Routes = [
         path: 'fila', component: Queue
     },
      {
-        path: 'perfomance', component: Dashboard
+        path: 'performance', component: Dashboard
     },
 ];

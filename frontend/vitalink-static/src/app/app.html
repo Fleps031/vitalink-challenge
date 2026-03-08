@@ -1,5 +1,5 @@
 <header>
-  <div>
+  <div class="app-title">
     <h1>VITALINK |</h1>
     <h1>Hospital São Rafael</h1>
   </div>
@@ -11,9 +11,10 @@
 </header>
 
 <nav class="tab-nav">
-  <a>Seus atendimentos</a>
-  <a>Kanban</a>
-  <a>Performance</a>
+  <a [class]="isActiveRoute('/') ? 'activeLink' : '' " (click)="navigateTo('/')">Seus atendimentos</a>
+  <a [class]="isActiveRoute('/fila') ? 'activeLink' : '' " (click)="navigateTo('/fila')">Kanban</a>
+  <a [class]="isActiveRoute('/performance') ? 'activeLink' : '' " (click)="navigateTo('/performance')">Performance</a>
 </nav>
+<div class="nav-divider"></div>
 
 <router-outlet></router-outlet>

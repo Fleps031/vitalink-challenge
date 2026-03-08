@@ -17,8 +17,8 @@ export class MessageService {
 
   public messages$: Observable<Record<string,IMessage[]>> = this.messageSubject.asObservable();
 
-  // private apiUrl = 'https://bernie-nonhypostatic-unlucidly.ngrok-free.dev/';
-  private apiUrl = 'http://localhost:8080/';
+  private apiUrl = 'https://bernie-nonhypostatic-unlucidly.ngrok-free.dev/';
+  // private apiUrl = 'http://localhost:8080/';
 
 
   constructor(private http: HttpClient) {}

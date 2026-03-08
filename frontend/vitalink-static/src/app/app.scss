@@ -1,0 +1,50 @@
+header{
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 8px;
+    background-color: black;
+}
+
+.app-title{
+    display: flex;
+    flex-direction: row;
+    grid-gap: 2px;
+    text-align: center;
+    align-items: center;
+}
+
+h1{
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+.tab-nav{
+    display: flex;
+    flex: row;
+    grid-gap: 16px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+a{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav-divider{
+    height: 2px;
+    background-color: black;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.activeLink{
+    color: rgb(4, 113, 128);
+    font-weight: 600;
+}
