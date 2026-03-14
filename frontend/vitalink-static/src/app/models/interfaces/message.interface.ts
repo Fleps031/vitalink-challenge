@@ -6,6 +6,6 @@ export enum MessageTypeEnum{
 export interface IMessage{
     content: string,
     from: string,
-    timestamp: string,
+    timestamp: Date,
     type: MessageTypeEnum 
 }

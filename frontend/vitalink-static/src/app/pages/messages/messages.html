@@ -3,9 +3,13 @@
         <h1>Em atendimento</h1>
         <div class="hor-divider"></div>
 
-        <div class="message-board-split-section">
-            <app-message-list [messageCards]="messageList.IN_CALL" (selectCard)="changeSelectedCard($event)"></app-message-list>
-            <app-message-board [allMessages]="serverMessages$ | async" [selectedConversation]="selectedCard.patient.phone" (sendMessageEvent)="sendMessage($event)"></app-message-board>
+        <div class="container">
+            <div class="message-board-split-section">
+                <app-message-list [messageCards]="messageList.IN_CALL" (selectCard)="changeSelectedCard($event)"></app-message-list>
+                <div class="ver-divider"></div>
+                <app-message-board [allMessages]="serverMessages$ | async" [selectedConversation]="selectedCard.patient.phone" (sendMessageEvent)="sendMessage($event)"></app-message-board>
+            </div>
+            <app-message-patient-info [patient]="selectedCard.patient"></app-message-patient-info>
         </div>
     </div>
 

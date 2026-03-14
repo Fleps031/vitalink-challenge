@@ -7,10 +7,11 @@ import { MessageBoard } from "./message-board/message-board";
 import { MessageService } from '../../services/message-service/message-service';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { MessagePatientInfo } from "./message-patient-info/message-patient-info";
 
 @Component({
   selector: 'app-messages',
-  imports: [MessageList, MessageBoard, AsyncPipe],
+  imports: [MessageList, MessageBoard, AsyncPipe, MessagePatientInfo],
   templateUrl: './messages.html',
   styleUrl: './messages.scss',
 })

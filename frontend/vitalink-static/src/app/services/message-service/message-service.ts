@@ -41,10 +41,13 @@ export class MessageService {
             const receivedMessage = JSON.parse(message.body)
             console.log("Mensagem recebida:", receivedMessage);
 
+            const newTimestamp = new Date(receivedMessage.timestamp)
+            newTimestamp.setHours(newTimestamp.getHours())
+
             const newMessage: IMessage = {
               content: receivedMessage.content,
               from: receivedMessage.from,
-              timestamp: receivedMessage.timestamp,
+              timestamp: newTimestamp,
               type: MessageTypeEnum.PATIENT
             }
 
@@ -85,7 +88,7 @@ export class MessageService {
     const newMessage: IMessage = {
       content: message,
       from: '999',
-      timestamp: String(new Date()),
+      timestamp: new Date(),
       type: MessageTypeEnum.CALLER
     }
 

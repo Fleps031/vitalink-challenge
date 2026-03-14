@@ -27,7 +27,8 @@
     display: flex;
     flex-direction: row;
     grid-gap: 21px;
-    background-color: #ececec;
+    border: solid gray 1px;
+    border-radius: 6px;
     width: 1120px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -37,3 +38,15 @@ h1{
     font-weight: 400;
 }
 
+.container{
+    display: flex;
+    flex-direction: row;
+    grid-gap: 16px;
+}
+
+.ver-divider{
+    width: 2px;
+    height: 600px;
+    background-color: rgb(192, 192, 192);
+    margin-top: 28px;
+}
