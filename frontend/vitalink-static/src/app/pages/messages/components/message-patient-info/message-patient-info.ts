@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IPatient } from '../../../models/interfaces/patient.interface';
+import { IPatient } from '../../../../models/interfaces/patient.interface';
 
 @Component({
   selector: 'app-message-patient-info',

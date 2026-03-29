@@ -14,9 +14,26 @@
     color: #7C7C7C;
 }
 
+.caller-info{
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-self: end;
+    color: #ffffff;
+
+    img{
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
 .patient-info{
     display: flex;
     flex-direction: row;
+    align-items: center;
     grid-gap: 12px;
 }
 

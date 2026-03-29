@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
-import { IMessage } from '../../../models/interfaces/message.interface';
-import { MessageBubble } from "../../../components/message-bubble/message-bubble";
+import { IMessage } from '../../../../models/interfaces/message.interface';
+import { MessageBubble } from "../../../../components/message-bubble/message-bubble";
 
 @Component({
   selector: 'app-message-board',

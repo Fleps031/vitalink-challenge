@@ -2,7 +2,11 @@
     display: flex;
     flex-direction: column;
     grid-gap: 20px;
-    background-color: #ececec;
+    border-radius: 6px;
     padding: 24px;
     width: 400px;
+}
+
+.hasBorder{
+    border: solid gray 1px;
 }

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IMessageCard } from '../../../models/interfaces/messageCard.interface';
-import { MessageCard } from "../../../components/message-card/message-card";
+import { IMessageCard } from '../../../../models/interfaces/messageCard.interface';
+import { MessageCard } from "../../../../components/message-card/message-card";
 
 @Component({
   selector: 'app-message-list',
@@ -10,6 +10,7 @@ import { MessageCard } from "../../../components/message-card/message-card";
 })
 export class MessageList {
   @Input() messageCards?: IMessageCard[]
+  @Input() hasBorder: boolean;
   @Output() selectCard: EventEmitter<IMessageCard>
 
   constructor(){

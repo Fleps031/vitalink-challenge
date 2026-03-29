@@ -1,0 +1,63 @@
+:host {
+  display: block;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #eef2f7; /* Borda sutil conforme image_f17be3 */
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.2s ease-in-out;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  color: #718096; /* Cinza suave para o label */
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+}
+
+.card-value {
+  color: #1a202c; /* Quase preto para destaque */
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Estilo dos Badges (Igual image_f17be3) */
+.badge {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 2px 0;
+}
+
+.badge-up {
+  color: #10b981; /* Verde esmeralda */
+}
+
+.badge-down {
+  color: #ef4444; /* Vermelho vibrante */
+}
+
+.badge-neutral {
+  color: #f59e0b; /* Âmbar */
+}
+
+.vs-text {
+  color: #a0aec0;
+  font-size: 12px;
+  font-weight: 400;
+}

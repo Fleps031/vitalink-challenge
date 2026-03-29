@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { MessageList } from "./message-list/message-list";
+import { MessageList } from "./components/message-list/message-list";
 import { IMessageCard } from '../../models/interfaces/messageCard.interface';
 import { mockFinishedCard, mockInCallCard, mockInCallFranciscoCard, mockInCallMatheusCard, mockWaitingCard } from './mocks';
 import { messageCardStatusEnum } from '../../models/enums/messageCardStatus.enum';
-import { MessageBoard } from "./message-board/message-board";
+import { MessageBoard } from "./components/message-board/message-board";
 import { MessageService } from '../../services/message-service/message-service';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
-import { MessagePatientInfo } from "./message-patient-info/message-patient-info";
+import { MessagePatientInfo } from "./components/message-patient-info/message-patient-info";
 
 @Component({
   selector: 'app-messages',

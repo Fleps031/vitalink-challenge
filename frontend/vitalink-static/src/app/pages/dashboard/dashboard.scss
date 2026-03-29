@@ -1,0 +1,131 @@
+:root {
+  --bg: #F3F4F6;
+  --surface: #FFFFFF;
+  --border: #E5E7EB;
+
+  --accent: #2563EB;
+  --accent2: #3366CC;
+
+  --accent4: #16A34A;
+  --accent5: #F59E0B;
+
+  --danger: #DC2626;
+
+  --text: #111827;
+  --muted: #6B7280;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #f8f9fc !important; /* Força a cor em toda a página */
+}
+
+:host {
+  display: block;
+  background-color: #f8f9fc;
+  min-height: 100vh;
+  width: 100%; /* Garante que o componente ocupe a largura toda */
+}
+.dashboard-container {
+  padding: 20px;
+  background-color: #f8f9fc;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.section-header {
+  color: #4e73df;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-top: 15px;
+}
+
+.grid-section {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Larguras específicas baseadas nas imagens */
+.section-volume { grid-template-columns: 2fr 1fr; }
+.section-tempos { grid-template-columns: 1fr 1fr 1fr; }
+.section-canais { grid-template-columns: 1fr 1fr 1.2fr; }
+.section-perf   { grid-template-columns: 2.2fr 1fr; }
+
+.chart-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e3e6f0;
+  min-height: 350px;
+}
+
+/* Responsividade para telas de notebook pequeno ou tablets */
+@media (max-width: 1100px) {
+  .section-volume, .section-tempos, .section-canais, .section-perf {
+    grid-template-columns: 1fr;
+  }
+}
+
+.custom-select {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px; /* Arredondado conforme a foto */
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.custom-select:hover {
+  border-color: #3b82f6;
+}
+
+.btn-filter {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-filter:hover {
+  background-color: #1d4ed8;
+}
+/* Isso centraliza tudo na tela */
+.main-wrapper {
+  max-width: 1400px;  /* Largura ideal para dashboards modernos */
+  margin: 0 auto;     /* Centraliza horizontalmente */
+  padding: 40px 20px; /* Respiro nas laterais e no topo */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Garante que o fundo da página toda seja o cinza claro das fotos */
+:host {
+  display: block;
+  background-color: #f8f9fc;
+  min-height: 100vh;
+}
+
+/* Ajuste no Header para não ficar colado no topo */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+
+/* Cards e Gráficos seguem a mesma largura do wrapper */
+.metrics-grid, .grid-section {
+  width: 100%;
+}

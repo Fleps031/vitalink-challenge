@@ -6,7 +6,7 @@
 
     <div class="cards">
         @for (card of cards; track $index) {
-            <app-message-card [cardInfo]="card"></app-message-card>
+            <app-message-card [cardInfo]="card" [hasCallerInfo]="true"></app-message-card>
         }
     </div>
 </div>

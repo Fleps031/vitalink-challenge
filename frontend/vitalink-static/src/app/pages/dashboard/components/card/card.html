@@ -1,0 +1,32 @@
+<div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:32px;">
+
+  <div class="card" *ngFor="let card of cards">
+    
+    <div class="glow" [ngStyle]="{ background: card.color }"></div>
+
+    <p class="text-xs text-muted mb-2 font-medium">
+      {{ card.title }}
+    </p>
+
+    <h2 class="text-3xl text-text">
+      {{ card.value }}
+    </h2>
+
+    <div class="mt-2 flex gap-2 items-center">
+      <span
+        [ngClass]="{
+          'badge-up': card.type === 'up',
+          'badge-down': card.type === 'down',
+          'badge-neutral': card.type === 'neutral'
+        }"
+      >
+        {{ card.change }}
+      </span>
+
+      <span class="text-[11px] text-muted">
+        vs mês anterior
+      </span>
+    </div>
+  </div>
+
+</div>

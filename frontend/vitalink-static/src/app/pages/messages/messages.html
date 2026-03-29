@@ -20,7 +20,7 @@
             <div class="hor-divider"></div>
 
             <div>
-                <app-message-list [messageCards]="messageList.FINISHED"></app-message-list>
+                <app-message-list [messageCards]="messageList.FINISHED" [hasBorder]="true"></app-message-list>
             </div>
         </div>
 
@@ -28,7 +28,8 @@
             <h1>Em aberto</h1>
             <div class="hor-divider"></div>
 
-            <div>
+            <div class="double-messages">
+                <app-message-list [messageCards]="messageList.WAITING_CALL"></app-message-list>
                 <app-message-list [messageCards]="messageList.WAITING_CALL"></app-message-list>
             </div>
         </div>

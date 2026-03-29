@@ -2,13 +2,24 @@
     <div [class]="'card-type ' + cardInfo.type">
         <p>{{typeEnum[cardInfo.type]}}</p>
     </div>
+    
+    @if (!hasCallerInfo) {
+        <div class="date-info">
+            <p>{{cardInfo.lastMessageDate}}</p>
+        </div>
+    }
 
-    <div class="date-info">
-        <p>{{cardInfo.lastMessageDate}}</p>
-    </div>
+    @if(hasCallerInfo){
+        <div class="caller-info">
+            <img src="https://100k-faces.vercel.app/api/random-image" alt="">
+        </div>
+    }
 
     <div class="patient-info">
-        <img src="https://100k-faces.vercel.app/api/random-image" alt="">
+         @if (!hasCallerInfo) {
+            <img src="https://100k-faces.vercel.app/api/random-image" alt="">
+         }
+
         <div>
             <h2 class="patient-name">{{cardInfo.patient.name}}</h2>
             <p class="last-message">{{cardInfo.lastMessage}}</p>

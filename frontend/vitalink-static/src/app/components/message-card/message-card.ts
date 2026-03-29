@@ -10,6 +10,7 @@ import { messageCardTypeLabelEnum } from '../../models/enums/messageCardType.enu
 })
 export class MessageCard {
   @Input() cardInfo: IMessageCard;
+  @Input() hasCallerInfo: boolean;
   @Output() clickCard: EventEmitter<IMessageCard>;
   typeEnum = messageCardTypeLabelEnum;
 

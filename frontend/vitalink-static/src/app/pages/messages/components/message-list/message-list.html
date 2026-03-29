@@ -1,4 +1,4 @@
-<section class="card-list">
+<section [class]="'card-list ' + (hasBorder ? 'hasBorder' : '')">
     @for (card of messageCards; track $index) {
         <app-message-card [cardInfo]="card" (clickCard)="onSelectCard($event)"></app-message-card>
     }

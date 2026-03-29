@@ -3,6 +3,7 @@
     flex-direction: column;
     grid-gap: 32px;
     padding-left: 40px;
+    flex: 1 1;
 }
 
 .messages-section{
@@ -35,7 +36,9 @@
 }
 
 h1{
-    font-weight: 400;
+    font-weight: 600;
+    font-size: 16px;
+    color: rgb(18, 134, 163);
 }
 
 .container{
@@ -49,4 +52,11 @@ h1{
     height: 600px;
     background-color: rgb(192, 192, 192);
     margin-top: 28px;
+}
+
+.double-messages{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: solid gray 1px;
+    border-radius: 6px;
 }
