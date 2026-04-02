@@ -1,0 +1,21 @@
+<div class="schedule-filter">
+    <p class="filter-label">{{label}}</p>
+
+    <div class="filter-selector">
+        <p class="filter-selected-value">{{selectedValue}}</p>
+        <p (click)="openOptions()" class="filter-dropdown" [class.opened]="optionsOpened">v</p>
+    </div>
+
+    @if (optionsOpened) {
+        <div class="filter-options">
+            @for (option of options; track $index) {
+                <div class="filter-option" (click)="onSelectOption(option)">
+                    <p>{{option}}</p>
+                </div>
+
+            }
+        </div>
+    }
+</div>
+
+

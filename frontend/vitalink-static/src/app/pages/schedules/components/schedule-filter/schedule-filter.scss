@@ -1,0 +1,49 @@
+.schedule-filter{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 6px;
+}
+
+.filter-label{
+    font-weight: 600;
+}
+
+.filter-selector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    padding: 12px;
+    border: solid rgb(197, 197, 197) 1px;
+    border-radius: 6px;
+}
+
+.filter-dropdown{
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    font-weight: 500;
+}
+
+.filter-dropdown.opened{
+    transform: rotate(180deg);
+}
+
+.filter-options{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 6px;
+    grid-gap: 6px;
+    overflow-y: hidden;
+}
+
+.filter-option{
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: solid 1px rgb(197, 197, 197);
+}
