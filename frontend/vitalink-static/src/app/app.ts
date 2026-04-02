@@ -10,6 +10,8 @@ import { Router, RouterOutlet } from '@angular/router';
 export class App {
   protected readonly title = signal('vitalink');
 
+  logoUrl = "vitalink-logo.svg"
+
   constructor(private router: Router){
     console.log(router.url)
   }

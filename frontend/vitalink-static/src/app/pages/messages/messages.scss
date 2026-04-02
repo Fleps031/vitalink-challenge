@@ -1,9 +1,11 @@
 .messages-container{
     display: flex;
     flex-direction: column;
-    grid-gap: 32px;
+    grid-gap: 20px;
     padding-left: 40px;
+    padding-top: 20px;
     flex: 1 1;
+    align-items: center;
 }
 
 .messages-section{
@@ -28,7 +30,7 @@
     display: flex;
     flex-direction: row;
     grid-gap: 21px;
-    border: solid gray 1px;
+    border: solid rgb(197, 197, 197) 1px;
     border-radius: 6px;
     width: 1120px;
     padding-top: 10px;
@@ -36,9 +38,16 @@
 }
 
 h1{
+    font-weight: 800;
+    color: #000000;
+    padding-left: 220px;
+}
+
+h2{
     font-weight: 600;
-    font-size: 16px;
-    color: rgb(18, 134, 163);
+    font-size: 20px;
+    color: #000000;
+    padding-left: 12px;
 }
 
 .container{
@@ -59,4 +68,48 @@ h1{
     grid-template-columns: 1fr 1fr;
     border: solid gray 1px;
     border-radius: 6px;
+}
+
+#title{
+    display: flex;
+    flex-direction: row;
+    align-self: start;
+}
+
+.message-cards-section{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px rgb(202, 202, 202);
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.divided-section{
+    display: flex;
+    flex-direction: row;
+    grid-gap: 20px;
+}
+
+.message-vertical-section{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+    max-height: 800px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#nurse{
+    width: 300px;
+    height: auto;
+    top: 100px;
+}
+
+#nurse-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    height: 745px;
 }

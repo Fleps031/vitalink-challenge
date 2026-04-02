@@ -1,4 +1,4 @@
-<div class="card" (click)="onClickCard()">
+<div [class]="selected ? 'card selected' : 'card'" (click)="onClickCard()">
     <div [class]="'card-type ' + cardInfo.type">
         <p>{{typeEnum[cardInfo.type]}}</p>
     </div>

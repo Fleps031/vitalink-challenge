@@ -1,23 +1,25 @@
 header{
-    height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 20px;
-    padding: 8px;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 12px 16px;
     background-color: black;
+    flex-wrap: wrap;
 }
 
 .app-title{
     display: flex;
     flex-direction: row;
-    grid-gap: 2px;
+    gap: 8px;
     text-align: center;
     align-items: center;
 }
 
 h1{
     color: white;
+    font-weight: 400;
 }
 
 p{
@@ -26,15 +28,16 @@ p{
 
 .tab-nav{
     display: flex;
-    flex: row;
-    grid-gap: 16px;
-    padding-left: 20px;
-    margin-bottom: 10px;
+    gap: 1.5rem;
+    align-items: center;
+    padding-right: 100px;
 }
 
 a{
-    font-size: 20px;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .nav-divider{
@@ -47,4 +50,14 @@ a{
 .activeLink{
     color: rgb(18, 134, 163);
     font-weight: 600;
+}
+
+.operador{
+    display: flex;
+    align-items: center;
+}
+
+img{
+    width: 40px;
+    height: 40px;
 }

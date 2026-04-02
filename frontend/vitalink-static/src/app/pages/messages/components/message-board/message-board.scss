@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: column;
     width: 600px;
-    height: 528px;
+    height: 540px;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
     padding: 10px;
+  
 }
 
 .message-input{
@@ -14,6 +15,9 @@
   height: 80px;
   padding: 10px;
   resize: none;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid rgb(212, 212, 212);
 }
 
 .board-wrapper{
@@ -22,5 +26,8 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 4px;
-  box-shadow: 0 12px 10px -6px gray;
+  border-radius: 6px;
+  border: solid 1px rgb(190, 190, 190);
+  grid-gap: 40px;
+  height: 742px;
 }

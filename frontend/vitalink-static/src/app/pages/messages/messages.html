@@ -1,38 +1,28 @@
 <section class="messages-container">
-    <div class="messages-section">
-        <h1>Em atendimento</h1>
-        <div class="hor-divider"></div>
+    <h1 id="title">Seus atendimentos</h1>
+    <div class="divided-section">
 
-        <div class="container">
-            <div class="message-board-split-section">
-                <app-message-list [messageCards]="messageList.IN_CALL" (selectCard)="changeSelectedCard($event)"></app-message-list>
-                <div class="ver-divider"></div>
-                <app-message-board [allMessages]="serverMessages$ | async" [selectedConversation]="selectedCard.patient.phone" (sendMessageEvent)="sendMessage($event)"></app-message-board>
-            </div>
-            <app-message-patient-info [patient]="selectedCard.patient"></app-message-patient-info>
+        <section class="message-vertical-section">
+            <section class="message-cards-section">
+                <h2>Em atendimento</h2>
+                <app-message-list [messageCards]="messageList.IN_CALL" (selectCard)="changeSelectedCard($event)" [selectedCard]="selectedCard"></app-message-list>
+            </section>
+            <section class="message-cards-section">
+                <h2>Em aberto</h2>
+                <app-message-list [messageCards]="messageList.WAITING_CALL" (selectCard)="changeSelectedCard($event)" [selectedCard]="selectedCard"></app-message-list>
+            </section>
+            <section class="message-cards-section">
+                <h2>Finalizados</h2>
+                <app-message-list [messageCards]="messageList.FINISHED" (selectCard)="changeSelectedCard($event)" [selectedCard]="selectedCard"></app-message-list>
+            </section>
+
+        </section>
+        <app-message-board [allMessages]="serverMessages$ | async" [selectedConversation]="selectedCard.patient.phone" (sendMessageEvent)="sendMessage($event)"></app-message-board>
+
+        <div id="nurse-wrapper">
+            <img src="EnfermeiraDSA.svg" id="nurse">
         </div>
     </div>
 
-
-    <div class="messages-split-section">
-        <div class="messages-section">
-            <h1>Finalizados</h1>
-            <div class="hor-divider"></div>
-
-            <div>
-                <app-message-list [messageCards]="messageList.FINISHED" [hasBorder]="true"></app-message-list>
-            </div>
-        </div>
-
-        <div class="messages-section">
-            <h1>Em aberto</h1>
-            <div class="hor-divider"></div>
-
-            <div class="double-messages">
-                <app-message-list [messageCards]="messageList.WAITING_CALL"></app-message-list>
-                <app-message-list [messageCards]="messageList.WAITING_CALL"></app-message-list>
-            </div>
-        </div>
-    </div>
 
 </section>

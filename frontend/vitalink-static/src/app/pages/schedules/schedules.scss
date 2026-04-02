@@ -1,0 +1,13 @@
+.schedules{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.schedule-filters{
+    display: flex;
+    flex-direction: row;
+    grid-gap: 20px;
+    margin-top: 20px;
+}

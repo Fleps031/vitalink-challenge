@@ -12,6 +12,7 @@ export class MessageList {
   @Input() messageCards?: IMessageCard[]
   @Input() hasBorder: boolean;
   @Output() selectCard: EventEmitter<IMessageCard>
+  @Input() selectedCard: IMessageCard;
 
   constructor(){
     this.selectCard = new EventEmitter<IMessageCard>();
@@ -19,5 +20,9 @@ export class MessageList {
 
   onSelectCard(card: IMessageCard){
     this.selectCard.emit(card)
+  }
+
+  isSelected(card: IMessageCard): boolean{
+    return this.selectedCard === card
   }
 }

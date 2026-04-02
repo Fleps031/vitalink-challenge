@@ -1,0 +1,11 @@
+<section class="schedules">
+    <h1>Agendamentos</h1>
+    <p>Filtre por médico, especialização e tipo de atendimento</p>
+
+    <section class="schedule-filters">
+        <app-schedule-filter [label]="'Médico'" [selectedValue]="selectedDoctor" (selectOption)="changeDoctor($event)" [options]="doctorOptions"></app-schedule-filter>
+        <app-schedule-filter [label]="'Especialização'" [selectedValue]="selectedSpecialization" (selectOption)="changeSpecialization($event)" [options]="specializationOptions"></app-schedule-filter>
+        <app-schedule-filter [label]="'Tipo de Cirurgia'" [selectedValue]="selectedType" (selectOption)="changeType($event)" [options]="surgeryOptions"></app-schedule-filter>
+    </section>
+</section>
+

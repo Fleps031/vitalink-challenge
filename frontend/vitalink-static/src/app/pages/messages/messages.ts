@@ -1,44 +1,26 @@
 import { Component, Input } from '@angular/core';
 import { MessageList } from "./components/message-list/message-list";
 import { IMessageCard } from '../../models/interfaces/messageCard.interface';
-import { mockFinishedCard, mockInCallCard, mockInCallFranciscoCard, mockInCallMatheusCard, mockWaitingCard } from './mocks';
+import { getPatientCardsMock, mockFinishedCard, mockInCallCard, mockInCallFranciscoCard, mockInCallMatheusCard, mockWaitingCard } from './mocks';
 import { messageCardStatusEnum } from '../../models/enums/messageCardStatus.enum';
 import { MessageBoard } from "./components/message-board/message-board";
 import { MessageService } from '../../services/message-service/message-service';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
-import { MessagePatientInfo } from "./components/message-patient-info/message-patient-info";
+import { messageCardTypeEnum } from '../../models/enums/messageCardType.enum';
 
 @Component({
   selector: 'app-messages',
-  imports: [MessageList, MessageBoard, AsyncPipe, MessagePatientInfo],
+  imports: [MessageList, MessageBoard, AsyncPipe],
   templateUrl: './messages.html',
   styleUrl: './messages.scss',
 })
 export class Messages {
 
   @Input() messageList: Record<messageCardStatusEnum, IMessageCard[]> = {
-    "IN_CALL": [
-      mockInCallCard,
-      mockInCallMatheusCard,
-      mockInCallFranciscoCard,
-      mockInCallCard,
-      mockInCallCard,
-    ],
-    "FINISHED": [
-      mockFinishedCard,
-      mockFinishedCard,
-      mockFinishedCard,
-      mockFinishedCard,
-      mockFinishedCard,
-    ],
-    "WAITING_CALL": [
-      mockWaitingCard,
-      mockWaitingCard,
-      mockWaitingCard,
-      mockWaitingCard,
-      mockWaitingCard,
-    ],
+    "IN_CALL": getPatientCardsMock(messageCardStatusEnum.IN_CALL),
+    "FINISHED": getPatientCardsMock(messageCardStatusEnum.FINISHED), 
+    "WAITING_CALL": getPatientCardsMock(messageCardStatusEnum.WAITING_CALL),
     "FIRST_CONTACT": []
   }
 

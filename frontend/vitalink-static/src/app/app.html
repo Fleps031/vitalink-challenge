@@ -1,20 +1,21 @@
 <header>
   <div class="app-title">
+    <img class="app-icon" [src]="logoUrl">
     <h1>VITALINK |</h1>
     <h1>Hospital São Rafael</h1>
   </div>
 
-  <div>
-    <img class="profile-picture">
+  <nav class="tab-nav">
+    <a [class]="isActiveRoute('/') ? 'activeLink' : '' " (click)="navigateTo('/')">Seus atendimentos</a>
+            <a [class]="isActiveRoute('/agendamentos') ? 'activeLink' : '' " (click)="navigateTo('/agendamentos')">Agendamentos</a>
+    <a [class]="isActiveRoute('/fila') ? 'activeLink' : '' " (click)="navigateTo('/fila')">Fila</a>
+    <a [class]="isActiveRoute('/performance') ? 'activeLink' : '' " (click)="navigateTo('/performance')">Performance</a>
+
+  </nav>
+
+  <div class="operador">
     <p>Operador</p>
   </div>
 </header>
-
-<nav class="tab-nav">
-  <a [class]="isActiveRoute('/') ? 'activeLink' : '' " (click)="navigateTo('/')">Seus atendimentos</a>
-  <a [class]="isActiveRoute('/fila') ? 'activeLink' : '' " (click)="navigateTo('/fila')">Kanban</a>
-  <a [class]="isActiveRoute('/performance') ? 'activeLink' : '' " (click)="navigateTo('/performance')">Performance</a>
-</nav>
-<div class="nav-divider"></div>
 
 <router-outlet></router-outlet>
