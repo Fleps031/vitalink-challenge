@@ -1,0 +1,44 @@
+@if (isOpen) {
+<div class="modal-backdrop" (click)="onCancel()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <h2>Novo Agendamento</h2>
+    <form (ngSubmit)="onSubmit()">
+      <label>Médico:</label>
+      <select [(ngModel)]="appointment.doctor" name="doctor" required>
+        <option value="">Selecione Médico</option>
+        @for (doc of doctorOptions; track doc) {
+        <option [value]="doc">{{doc}}</option>
+        }
+      </select>
+
+      <label>Especialização:</label>
+      <select [(ngModel)]="appointment.specialization" name="specialization" required>
+        <option value="">Selecione Especialização</option>
+        @for (spec of specializationOptions; track spec) {
+        <option [value]="spec">{{spec}}</option>
+        }
+      </select>
+
+      <label>Tipo de Atendimento:</label>
+      <select [(ngModel)]="appointment.surgery" name="surgery" required>
+        <option value="">Selecione Tipo</option>
+        @for (surg of surgeryOptions; track surg) {
+        <option [value]="surg">{{surg}}</option>
+        }
+      </select>
+
+      <label>Data:</label>
+      <input type="text" [(ngModel)]="appointment.date" name="date" placeholder="e.g. Segunda" required>
+
+      <label>Hora:</label>
+      <input type="text" [(ngModel)]="appointment.time" name="time" placeholder="e.g. 14:00" required>
+
+      <label>Nome do Paciente:</label>
+      <input type="text" [(ngModel)]="appointment.patientName" name="patientName" required>
+
+      <button type="submit">Criar</button>
+      <button type="button" (click)="onCancel()">Cancelar</button>
+    </form>
+  </div>
+</div>
+}

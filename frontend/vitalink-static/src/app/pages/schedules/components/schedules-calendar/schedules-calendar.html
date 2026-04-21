@@ -1,0 +1,43 @@
+<section class="schedules-calendar">
+    @for (day of weekdays; track $index) {
+        <div class="day-card">
+            <div class="day-header">
+                <div class="calendar-day">
+                    <p>{{day}}</p>
+                </div>
+
+                <p>{{weekDates[weekdays.indexOf(day)]}}</p>
+            </div>
+
+            <div class="schedules-list">
+                @if (isScheduledList) {
+                    @for (schedule of getSchedulesForDay(day); track $index) {
+                    <ng-container *ngTemplateOutlet="availableScheduleTemplate; context: {$implicit: schedule, isScheduled: false}"></ng-container>
+                    }
+                }
+                @else {
+                    @for (schedule of getSchedulesForDay(day); track $index) {
+                    <ng-container *ngTemplateOutlet="availableScheduleTemplate; context: {$implicit: schedule, isScheduled: true}"></ng-container>
+                    }
+                }
+                
+            </div>
+      
+        </div>
+    }
+</section>
+
+<ng-template let-schedule let-isScheduled="isScheduled" #availableScheduleTemplate>
+    <div class="schedule-item">
+        <div class="schedule-item-left">
+            <p class="schedule-time">{{schedule.time}}</p>
+            <p class="doctor-name">{{schedule.doctor}}</p>
+            @if (isScheduled) {
+                <div class="vertical-divider"></div>
+                <p class="patient-name">{{schedule.patientName}}</p>
+            }
+        </div>
+
+        <p> {{schedule.surgery}}</p>
+    </div>
+</ng-template>

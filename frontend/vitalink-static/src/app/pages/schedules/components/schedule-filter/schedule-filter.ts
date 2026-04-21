@@ -30,5 +30,6 @@ export class ScheduleFilter {
 
   onSelectOption(option: string): void {
     this.selectOption.emit(option);
+    this.optionsOpened = false;
   }
 }
