@@ -92,7 +92,6 @@ export class Schedules {
   }
 
   onCreateAppointment(appointment: any) {
-    // Check if time is available
     const conflict = this.availableSchedules.some(s => s.doctor === appointment.doctor && s.date === appointment.date && s.time === appointment.time);
     if (conflict) {
       alert('Horário não disponível');

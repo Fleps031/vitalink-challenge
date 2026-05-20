@@ -87,3 +87,19 @@ h2{
     cursor: pointer;    
     color: #797979;
 }
+
+.vector-separator{
+    display: flex;
+    flex-direction: row;
+}
+
+#doctor-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: end;
+    align-items: flex-end;
+    top: 410px;
+    left: 10px;
+}

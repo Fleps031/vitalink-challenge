@@ -1,99 +1,121 @@
-.card{
-    background-color: white;
-    padding: 0 8px 12px 8px;
-    height: 100px;
-    align-content: center;
-    border-radius: 12px;
-    border: 1px solid rgb(204, 204, 204);
-
-    &:hover{
-        cursor: pointer;
-        background-color: rgb(247, 247, 247);
-    }
+.card {
+  background-color: white;
+  padding: 14px 14px 16px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.date-info{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    width: 100%;
-    color: #7C7C7C;
-    font-size: 14px;
+.card:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
-.caller-info{
-    position: relative;
-    bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    justify-self: end;
-    color: #ffffff;
-
-    img{
-        width: 30px;
-        height: 30px;
-    }
+.otherCard {
+  background-color: white;
+  padding: 14px 14px 16px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
 }
 
-
-.patient-info{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    grid-gap: 12px;
+.otherCard:hover {
+  cursor: pointer;
+  background-color: #f8fafc;
 }
 
-img{
-    width: 42px;
-    height: 42px;
-    border-radius: 100px;
+.date-info {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
 }
 
-.last-message{
-    color: #7C7C7C;
+.patient-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
 }
 
-.patient-name{
-    font-size: 20px;
-    font-weight: 400;
+.patient-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
 }
 
-.card-type{
-    display: flex;
-    width: fit-content;
-    padding: 0 10px 0px 10px;
-    height: 20px;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    bottom: 20px;
-    right: 16px;
-    color: white;
-    font-size: 12px;
-    border-radius: 20px;
+.patient-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.SCHEDULE{
-    background-color: #54ACAF;
+.patient-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
 }
 
-.BROAD_QUESTION{
-    background-color: #E69F4E;
+.last-message {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-.RE_SCHEDULE{
-    background-color: #5474AF;
+img {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  object-fit: cover;
 }
 
-.INSURANCE{
-    background-color: #54AF62;
+.card-type,
+.other-card-type {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0 12px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.78rem;
+  border-radius: 999px;
+  margin-bottom: 10px;
 }
 
-.NOT_DEFINED{
-    background-color: #7C7C7C;
+.other-patient {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.selected{
-    background-color: rgb(233, 233, 233);
+.SCHEDULE {
+  background-color: #2563eb;
+}
+
+.BROAD_QUESTION {
+  background-color: #f59e0b;
+}
+
+.RE_SCHEDULE {
+  background-color: #9333ea;
+}
+
+.INSURANCE {
+  background-color: #16a34a;
+}
+
+.NOT_DEFINED {
+  background-color: #64748b;
+}
+
+.selected {
+  background-color: #eef2ff;
 }

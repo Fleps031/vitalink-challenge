@@ -1,34 +1,52 @@
-<section class="search-section">
-    <div class="search-divider">
-        <div class="search-bar"></div>
-        <div class="filter">Nome</div>
+<section class="queue-page">
+  <header class="queue-header">
+    <div class="header-copy">
+      <p class="eyebrow">Fila de atendimento</p>
+      <h1>Quadro Kanban de Atendimentos</h1>
+      <p class="subtitle">Cada atendimento é exibido como um cartão dentro da coluna de status. Use os filtros para encontrar pacientes e responsáveis de forma rápida.</p>
     </div>
 
-    <div>
-        <img>
-        <img>
-        <img>
-        <img>
-        <img>
-        <img>
+    <div class="filter-panel">
+      <div class="filter-item">
+        <label for="patient-search">Paciente</label>
+        <input
+          id="patient-search"
+          type="text"
+          placeholder="Buscar por nome do paciente"
+          [(ngModel)]="patientFilter"
+          (input)="filterCards()"
+        />
+      </div>
+
+      <div class="filter-item">
+        <label for="attendant-select">Atendente</label>
+        <select id="attendant-select" name="attendant" [(ngModel)]="attendantFilter" (change)="filterCards()">
+          <option *ngFor="let attendant of attendantOptions" [value]="attendant">{{ attendant }}</option>
+        </select>
+      </div>
     </div>
-</section>
+  </header>
 
-<section class="columns-wrapper">
-    <app-queue-column [cards]="allCards.FIRST_CONTACT" label="Primeiro contato"></app-queue-column>
-    
-    <div class="ver-divider"></div>
-    
-    <app-queue-column [cards]="allCards.FIRST_CONTACT" label="Aguardando atendimento"></app-queue-column>
-    
-    <div class="ver-divider"></div>
-    
-    <app-queue-column [cards]="allCards.FIRST_CONTACT" label="Em atendimento"></app-queue-column>
-    
-    <div class="ver-divider"></div>
+  <section class="summary-row">
+    <div class="summary-card">
+      <span class="summary-title">Atendimentos filtrados</span>
+      <strong>{{ totalCards }}</strong>
+    </div>
+    <div class="summary-card">
+      <span class="summary-title">Atendente ativo</span>
+      <strong>{{ attendantFilter === 'Todos' ? 'Todos' : attendantFilter }}</strong>
+    </div>
+    <div class="summary-card">
+      <span class="summary-title">Busca por paciente</span>
+      <strong>{{ patientFilter === '' ? 'Nenhum filtro' : patientFilter }}</strong>
+    </div>
+  </section>
 
-    <app-queue-column [cards]="allCards.FIRST_CONTACT" label="Finalizado"></app-queue-column>
-    
-    <div class="ver-divider"></div>
+  <section class="columns-wrapper">
+    <app-queue-column [cards]="filteredCards.FIRST_CONTACT" label="Primeiro contato"></app-queue-column>
+    <app-queue-column [cards]="filteredCards.WAITING_CALL" label="Aguardando atendimento"></app-queue-column>
+    <app-queue-column [cards]="filteredCards.IN_CALL" label="Em atendimento"></app-queue-column>
+    <app-queue-column [cards]="filteredCards.FINISHED" label="Finalizado"></app-queue-column>
+  </section>
 </section>
 

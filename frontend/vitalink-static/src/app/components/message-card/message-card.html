@@ -1,29 +1,34 @@
-<div [class]="selected ? 'card selected' : 'card'" (click)="onClickCard()">
+@if (!hasCallerInfo) {
+  <div [class]="selected ? 'card selected' : 'card'" (click)="onClickCard()">
     <div [class]="'card-type ' + cardInfo.type">
-        <p>{{typeEnum[cardInfo.type]}}</p>
+      <p>{{ typeEnum[cardInfo.type] }}</p>
     </div>
-    
-    @if (!hasCallerInfo) {
-        <div class="date-info">
-            <p>{{cardInfo.lastMessageDate}}</p>
-        </div>
-    }
 
-    @if(hasCallerInfo){
-        <div class="caller-info">
-            <img src="https://100k-faces.vercel.app/api/random-image" alt="">
-        </div>
-    }
+    <div class="date-info">
+      <p>{{ cardInfo.lastMessageDate }}</p>
+    </div>
 
     <div class="patient-info">
-         @if (!hasCallerInfo) {
-            <img src="https://100k-faces.vercel.app/api/random-image" alt="">
-         }
-
-        <div>
-            <h2 class="patient-name">{{cardInfo.patient.name}}</h2>
-            <p class="last-message">{{cardInfo.lastMessage}}</p>
+      <img [src]="avatarSrc" [alt]="cardInfo.patient.name" />
+      <div class="patient-details">
+        <div class="patient-header">
+          <h2 class="patient-name">{{ cardInfo.patient.name }}</h2>
         </div>
+        <p class="last-message">{{ cardInfo.lastMessage || 'Nenhuma mensagem recente registrada.' }}</p>
+      </div>
+    </div>
+  </div>
+}
+
+@else() {
+  <div class="otherCard">
+    <div [class]="'other-card-type ' + cardInfo.type">
+      <p>{{ typeEnum[cardInfo.type] }}</p>
     </div>
 
-</div>
+    <div class="other-patient">
+      <p class="other-patient-name">{{ cardInfo.patient.name }}</p>
+      <img [src]="avatarSrc" [alt]="cardInfo.patient.name" />
+    </div>
+  </div>
+}

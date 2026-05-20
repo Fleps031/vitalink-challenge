@@ -34,6 +34,48 @@
 /* Controles e Filtros */
 .header-controls {
   display: flex;
-  gap: 12px;
-  align-items: center;
+  gap: 18px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+/* Estilo dos selects do header alinhado com padrão do projeto */
+.header-controls .custom-select {
+  background-color: transparent;
+  border: 1px solid #d1d5db;
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #111827;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.header-controls .custom-select:focus,
+.header-controls .custom-select:hover {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.08);
+}
+
+/* Botão 'Aplicar Filtros' padronizado e moderno */
+.header-controls .btn-filter {
+  background: linear-gradient(180deg, #2563eb 0%, #1e40af 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+
+.header-controls .btn-filter:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.16);
+}
+
+.header-controls .btn-filter:active {
+  transform: translateY(0);
+  opacity: 0.95;
 }

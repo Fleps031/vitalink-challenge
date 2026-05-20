@@ -1,12 +1,21 @@
 
 
 <div class="queue-column">
-    <h1>{{label}}</h1>
-    <div class="hor-divider"></div>
-
-    <div class="cards">
-        @for (card of cards; track $index) {
-            <app-message-card [cardInfo]="card" [hasCallerInfo]="true"></app-message-card>
-        }
+  <div class="column-header">
+    <div>
+      <h2>{{ label }}</h2>
+      <p class="column-subtitle">{{ cards?.length || 0 }} cartão{{ cards?.length === 1 ? '' : 's' }}</p>
     </div>
+  </div>
+
+  <div class="hor-divider"></div>
+
+  <div class="cards">
+    @for (card of cards; track $index) {
+      <app-message-card [cardInfo]="card" [hasCallerInfo]="true"></app-message-card>
+    }
+    @if (!cards || cards.length === 0) {
+      <div class="empty-state">Nenhum atendimento encontrado.</div>
+    }
+  </div>
 </div>

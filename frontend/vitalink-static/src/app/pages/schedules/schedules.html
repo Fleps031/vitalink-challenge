@@ -1,36 +1,44 @@
-<section class="schedules">
+<div class="vector-separator">
 
-    <div class="titles">
-        <h1>Agendamentos</h1>
-        <button class="new-appointment-btn" (click)="openModal()">Novo Agendamento</button>
-    </div>
+    <section class="schedules">
+
+        <div class="titles">
+            <h1>Agendamentos</h1>
+            <button class="new-appointment-btn" (click)="openModal()">Novo Agendamento</button>
+        </div>
 
 
-    <section class="schedule-filters">
-        <app-schedule-filter [label]="'Médico'" [selectedValue]="selectedDoctor" (selectOption)="changeDoctor($event)" [options]="doctorOptions"></app-schedule-filter>
-        <app-schedule-filter [label]="'Especialização'" [selectedValue]="selectedSpecialization" (selectOption)="changeSpecialization($event)" [options]="specializationOptions"></app-schedule-filter>
-        <app-schedule-filter [label]="'Tipo de Atendimento'" [selectedValue]="selectedType" (selectOption)="changeType($event)" [options]="surgeryOptions"></app-schedule-filter>
+        <section class="schedule-filters">
+            <app-schedule-filter [label]="'Médico'" [selectedValue]="selectedDoctor" (selectOption)="changeDoctor($event)" [options]="doctorOptions"></app-schedule-filter>
+            <app-schedule-filter [label]="'Especialização'" [selectedValue]="selectedSpecialization" (selectOption)="changeSpecialization($event)" [options]="specializationOptions"></app-schedule-filter>
+            <app-schedule-filter [label]="'Tipo de Atendimento'" [selectedValue]="selectedType" (selectOption)="changeType($event)" [options]="surgeryOptions"></app-schedule-filter>
+        </section>
+
+        <div class="found-schedules-div">
+            <p id="found-schedules">{{foundSchedules}}</p>
+            <p>Horários disponiveis</p>
+        </div>
+
+        <header class="schedule-header">
+            <h2 [class]="selectedTab === 'Disponibilidade' ? 'active-tab' : 'inactive-tab'" (click)="selectedTab = 'Disponibilidade'">Disponibilidade</h2>
+            <div class="vertical-divider"></div>
+            <h2 [class]="selectedTab === 'Agendados' ? 'active-tab' : 'inactive-tab'" (click)="selectedTab = 'Agendados'">Agendados</h2>
+        </header>
+
+        @if(selectedTab === 'Disponibilidade'){
+            <app-schedules-calendar [schedules]="filteredSchedules"></app-schedules-calendar>
+        }
+        @else {
+            <app-schedules-calendar [schedules]="scheduledAppointments" [isScheduledList]="false"></app-schedules-calendar>
+        }
+
     </section>
-
-    <div class="found-schedules-div">
-        <p id="found-schedules">{{foundSchedules}}</p>
-        <p>Horários disponiveis</p>
+    
+    <div id="doctor-wrapper">
+        <img src="MedicoDSA.svg" id="doctor">
     </div>
 
-    <header class="schedule-header">
-        <h2 [class]="selectedTab === 'Disponibilidade' ? 'active-tab' : 'inactive-tab'" (click)="selectedTab = 'Disponibilidade'">Disponibilidade</h2>
-        <div class="vertical-divider"></div>
-        <h2 [class]="selectedTab === 'Agendados' ? 'active-tab' : 'inactive-tab'" (click)="selectedTab = 'Agendados'">Agendados</h2>
-    </header>
-
-    @if(selectedTab === 'Disponibilidade'){
-        <app-schedules-calendar [schedules]="filteredSchedules"></app-schedules-calendar>
-    }
-    @else {
-        <app-schedules-calendar [schedules]="scheduledAppointments" [isScheduledList]="false"></app-schedules-calendar>
-    }
-
-</section>
+</div>
 @if (isModalOpen) {
     <app-schedule-form [isOpen]="isModalOpen" (closeModal)="closeModal()" (createAppointment)="onCreateAppointment($event)"></app-schedule-form>
 }

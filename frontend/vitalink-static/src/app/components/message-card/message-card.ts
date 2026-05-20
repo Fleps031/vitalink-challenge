@@ -19,6 +19,13 @@ export class MessageCard {
     this.clickCard = new EventEmitter<IMessageCard>();
   }
 
+  get avatarSrc(): string {
+    const seed = encodeURIComponent(
+      this.cardInfo?.patient?.name || this.cardInfo?.patient?.phone || 'patient'
+    );
+    return `https://api.dicebear.com/6.x/pixel-art/svg?seed=${seed}&size=80`;
+  }
+
   onClickCard(): void{
     this.clickCard.emit(this.cardInfo)
   }

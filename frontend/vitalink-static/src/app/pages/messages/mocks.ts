@@ -21,18 +21,35 @@ const patientNames = [
     "Lucas Lima",
 ]
 
+export const attendantNames = [
+    "Ana Souza",
+    "Matheus Eiki",
+    "Francisco Vargas",
+    "Rafael Almeida",
+    "Mariana Oliveira",
+    "Larissa Costa",
+    "Bruno Santos",
+    "Camila Martins",
+]
+
 const getRandomName = (): string => {
     const randomIndex = Math.floor(Math.random() * patientNames.length);
     return patientNames[randomIndex];
 }
 
-const createNewMessageCard = (patient: IPatient, type: messageCardTypeEnum, status: messageCardStatusEnum): IMessageCard => {
+const createNewMessageCard = (
+    patient: IPatient,
+    type: messageCardTypeEnum,
+    status: messageCardStatusEnum,
+    attendant: string
+): IMessageCard => {
     return {
         patient,
         lastMessageDate: new Date().toLocaleDateString(),
         type,
         status,
-        selected: false
+        attendant,
+        selected: false,
     }
 }
 
@@ -68,7 +85,8 @@ export const getPatientCardsMock = (status: messageCardStatusEnum): IMessageCard
     const cards: IMessageCard[] = []
 
     patients.forEach((patient, index) => {
-        cards.push(createNewMessageCard(patient, types[index], status))
+        const attendant = attendantNames[index % attendantNames.length]
+        cards.push(createNewMessageCard(patient, types[index], status, attendant))
     })
 
     return cards
@@ -102,45 +120,48 @@ export const mockFrancisco: IPatient = {
 
 export const mockInCallCard: IMessageCard = {
     patient: mockPatient,
-    lastMessage: 'Ultima mensagem do paciente',
+    lastMessage: 'Última mensagem do paciente',
     lastMessageDate: '30-03-2026',
     type: messageCardTypeEnum.SCHEDULE,
     status: messageCardStatusEnum.IN_CALL,
+    attendant: 'Ana Souza',
     selected: false,
 }
 
 export const mockInCallMatheusCard: IMessageCard = {
     patient: mockMatheus,
-    lastMessage: 'Ultima mensagem do paciente',
+    lastMessage: 'Última mensagem do paciente',
     lastMessageDate: '30-03-2026',
     type: messageCardTypeEnum.SCHEDULE,
     status: messageCardStatusEnum.IN_CALL,
+    attendant: 'Matheus Eiki',
     selected: false,
 }
 
 export const mockInCallFranciscoCard: IMessageCard = {
     patient: mockFrancisco,
-    lastMessage: 'Ultima mensagem do paciente',
+    lastMessage: 'Última mensagem do paciente',
     lastMessageDate: '30-03-2026',
     type: messageCardTypeEnum.SCHEDULE,
     status: messageCardStatusEnum.IN_CALL,
+    attendant: 'Francisco Vargas',
     selected: false,
 }
-
 
 export const mockFinishedCard: IMessageCard = {
     patient: mockPatient,
     lastMessageDate: '30-03-2026',
     type: messageCardTypeEnum.SCHEDULE,
     status: messageCardStatusEnum.FINISHED,
-    selected: false
+    attendant: 'Rafael Almeida',
+    selected: false,
 }
-
 
 export const mockWaitingCard: IMessageCard = {
     patient: mockPatient,
     lastMessageDate: '30-03-2026',
     type: messageCardTypeEnum.SCHEDULE,
     status: messageCardStatusEnum.WAITING_CALL,
-    selected: false
+    attendant: 'Mariana Oliveira',
+    selected: false,
 }
